@@ -1,0 +1,6 @@
+framework module eroswyqy {
+  umbrella header "eroswyqy-umbrella.h"
+
+  export *
+  module * { export * }
+}

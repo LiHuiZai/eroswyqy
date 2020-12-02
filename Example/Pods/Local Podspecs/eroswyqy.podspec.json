@@ -1,0 +1,22 @@
+{
+  "name": "eroswyqy",
+  "version": "0.1.0",
+  "summary": "A short description of eroswyqy.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/xiaoxiaoh99@163.com/eroswyqy",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "xiaoxiaoh99@163.com": "xiaoxiaoh99@163.com"
+  },
+  "source": {
+    "git": "https://github.com/xiaoxiaoh99@163.com/eroswyqy.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "eroswyqy/Classes/**/*"
+}

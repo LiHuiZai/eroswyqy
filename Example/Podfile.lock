@@ -1,0 +1,16 @@
+PODS:
+  - eroswyqy (0.1.0)
+
+DEPENDENCIES:
+  - eroswyqy (from `../`)
+
+EXTERNAL SOURCES:
+  eroswyqy:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  eroswyqy: 3187417497a9922f0409152caf83a6c3a8d6784f
+
+PODFILE CHECKSUM: 3d763b9e49ef1bd7df60fad37cae2dcb0ade221d
+
+COCOAPODS: 1.5.3

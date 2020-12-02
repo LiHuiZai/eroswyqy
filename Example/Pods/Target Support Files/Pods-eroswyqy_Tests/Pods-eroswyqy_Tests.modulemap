@@ -1,0 +1,6 @@
+framework module Pods_eroswyqy_Tests {
+  umbrella header "Pods-eroswyqy_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
