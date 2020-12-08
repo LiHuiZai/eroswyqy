@@ -1,6 +1,9 @@
-use_frameworks!
+#use_frameworks!
 target 'eroswyqy_Tests' do
   pod 'eroswyqy', :path => '../'
-  
-  
+  pod 'QY_iOS_SDK', '~> 5.11.0'
+#  pod 'WeexSDK', :git => 'https://github.com/LiHuiZai/WeexiOSSDK.git',:tag => '1.0.1'
+  pod 'ErosPluginBaseLibrary', :git => 'https://github.com/LiHuiZai/eros-plugin-ios-baseLibrary.git', :branch => 'master'
+#  pod 'WXDevtool',:git => 'https://github.com/bmfe/weex-devtool-iOS.git', :configurations => ['Debug']
+
 end
