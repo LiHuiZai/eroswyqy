@@ -9,7 +9,6 @@
 #import <QYSDK/QYSDK.h>
 #import <WeexSDK/WeexSDK.h>
 #import <WeexPluginLoader/WeexPluginLoader/WeexPluginLoader.h>
-#import "WYSettingData.h"
 #import "TXTools.h"
 
 WX_PlUGIN_EXPORT_MODULE(bmOpenChat, WYOpenChat)
