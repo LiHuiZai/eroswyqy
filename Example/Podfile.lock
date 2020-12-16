@@ -1,16 +1,284 @@
 PODS:
-  - eroswyqy (0.1.0)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - BindingX (1.0.3):
+    - WeexPluginLoader
+    - WeexSDK
+  - CTMediator (13)
+  - ErosPluginBaseLibrary (1.4.2):
+    - CTMediator (= 13)
+    - ErosPluginBaseLibrary/BMComponent (= 1.4.2)
+    - ErosPluginBaseLibrary/BMController (= 1.4.2)
+    - ErosPluginBaseLibrary/BMCustomUI (= 1.4.2)
+    - ErosPluginBaseLibrary/BMDebug (= 1.4.2)
+    - ErosPluginBaseLibrary/BMDevice (= 1.4.2)
+    - ErosPluginBaseLibrary/BMExtension (= 1.4.2)
+    - ErosPluginBaseLibrary/BMHandler (= 1.4.2)
+    - ErosPluginBaseLibrary/BMManager (= 1.4.2)
+    - ErosPluginBaseLibrary/BMModel (= 1.4.2)
+    - ErosPluginBaseLibrary/BMModule (= 1.4.2)
+    - ErosPluginBaseLibrary/BMNetwork (= 1.4.2)
+    - ErosPluginBaseLibrary/BMTransition (= 1.4.2)
+    - ErosPluginBaseLibrary/BMWeexExtension (= 1.4.2)
+    - ErosPluginBaseLibrary/ErosApp (= 1.4.2)
+    - Masonry (= 1.1.0)
+    - MJRefresh (= 3.2.0)
+    - SDWebImage (= 5.0.6)
+    - SocketRocket (= 0.5.1)
+    - SSZipArchive (= 2.2.2)
+    - YTKNetwork (= 3.0.0)
+    - YYModel (= 1.0.4)
+    - YYText (= 1.0.7)
+  - ErosPluginBaseLibrary/BMComponent (1.4.2):
+    - CTMediator (= 13)
+    - FSCalendar (= 2.8.0)
+    - Masonry (= 1.1.0)
+    - MJRefresh (= 3.2.0)
+    - SDWebImage (= 5.0.6)
+    - SocketRocket (= 0.5.1)
+    - SSZipArchive (= 2.2.2)
+    - YTKNetwork (= 3.0.0)
+    - YYModel (= 1.0.4)
+    - YYText (= 1.0.7)
+  - ErosPluginBaseLibrary/BMController (1.4.2):
+    - CTMediator (= 13)
+    - Masonry (= 1.1.0)
+    - MJRefresh (= 3.2.0)
+    - SDWebImage (= 5.0.6)
+    - SocketRocket (= 0.5.1)
+    - SSZipArchive (= 2.2.2)
+    - YTKNetwork (= 3.0.0)
+    - YYModel (= 1.0.4)
+    - YYText (= 1.0.7)
+  - ErosPluginBaseLibrary/BMCustomUI (1.4.2):
+    - CTMediator (= 13)
+    - Masonry (= 1.1.0)
+    - MJRefresh (= 3.2.0)
+    - SDWebImage (= 5.0.6)
+    - SocketRocket (= 0.5.1)
+    - SSZipArchive (= 2.2.2)
+    - YTKNetwork (= 3.0.0)
+    - YYModel (= 1.0.4)
+    - YYText (= 1.0.7)
+  - ErosPluginBaseLibrary/BMDebug (1.4.2):
+    - CTMediator (= 13)
+    - Masonry (= 1.1.0)
+    - MJRefresh (= 3.2.0)
+    - SDWebImage (= 5.0.6)
+    - SocketRocket (= 0.5.1)
+    - SSZipArchive (= 2.2.2)
+    - YTKNetwork (= 3.0.0)
+    - YYModel (= 1.0.4)
+    - YYText (= 1.0.7)
+  - ErosPluginBaseLibrary/BMDevice (1.4.2):
+    - CTMediator (= 13)
+    - Masonry (= 1.1.0)
+    - MJRefresh (= 3.2.0)
+    - SDWebImage (= 5.0.6)
+    - SocketRocket (= 0.5.1)
+    - SSZipArchive (= 2.2.2)
+    - YTKNetwork (= 3.0.0)
+    - YYModel (= 1.0.4)
+    - YYText (= 1.0.7)
+  - ErosPluginBaseLibrary/BMExtension (1.4.2):
+    - CTMediator (= 13)
+    - Masonry (= 1.1.0)
+    - MJRefresh (= 3.2.0)
+    - SDWebImage (= 5.0.6)
+    - SocketRocket (= 0.5.1)
+    - SSZipArchive (= 2.2.2)
+    - YTKNetwork (= 3.0.0)
+    - YYModel (= 1.0.4)
+    - YYText (= 1.0.7)
+  - ErosPluginBaseLibrary/BMHandler (1.4.2):
+    - CTMediator (= 13)
+    - Masonry (= 1.1.0)
+    - MJRefresh (= 3.2.0)
+    - SDWebImage (= 5.0.6)
+    - SocketRocket (= 0.5.1)
+    - SSZipArchive (= 2.2.2)
+    - YTKNetwork (= 3.0.0)
+    - YYModel (= 1.0.4)
+    - YYText (= 1.0.7)
+  - ErosPluginBaseLibrary/BMManager (1.4.2):
+    - CTMediator (= 13)
+    - Masonry (= 1.1.0)
+    - MJRefresh (= 3.2.0)
+    - SDWebImage (= 5.0.6)
+    - SocketRocket (= 0.5.1)
+    - SSZipArchive (= 2.2.2)
+    - YTKNetwork (= 3.0.0)
+    - YYModel (= 1.0.4)
+    - YYText (= 1.0.7)
+  - ErosPluginBaseLibrary/BMModel (1.4.2):
+    - CTMediator (= 13)
+    - Masonry (= 1.1.0)
+    - MJRefresh (= 3.2.0)
+    - SDWebImage (= 5.0.6)
+    - SocketRocket (= 0.5.1)
+    - SSZipArchive (= 2.2.2)
+    - YTKNetwork (= 3.0.0)
+    - YYModel (= 1.0.4)
+    - YYText (= 1.0.7)
+  - ErosPluginBaseLibrary/BMModule (1.4.2):
+    - BindingX (= 1.0.3)
+    - CTMediator (= 13)
+    - Masonry (= 1.1.0)
+    - MJRefresh (= 3.2.0)
+    - Realm (= 3.17.0)
+    - SDWebImage (= 5.0.6)
+    - SocketRocket (= 0.5.1)
+    - SSZipArchive (= 2.2.2)
+    - TZImagePickerController (= 3.2.1)
+    - YTKNetwork (= 3.0.0)
+    - YYModel (= 1.0.4)
+    - YYText (= 1.0.7)
+  - ErosPluginBaseLibrary/BMNetwork (1.4.2):
+    - CTMediator (= 13)
+    - Masonry (= 1.1.0)
+    - MJRefresh (= 3.2.0)
+    - SDWebImage (= 5.0.6)
+    - SocketRocket (= 0.5.1)
+    - SSZipArchive (= 2.2.2)
+    - YTKNetwork (= 3.0.0)
+    - YYModel (= 1.0.4)
+    - YYText (= 1.0.7)
+  - ErosPluginBaseLibrary/BMTransition (1.4.2):
+    - CTMediator (= 13)
+    - Masonry (= 1.1.0)
+    - MJRefresh (= 3.2.0)
+    - SDWebImage (= 5.0.6)
+    - SocketRocket (= 0.5.1)
+    - SSZipArchive (= 2.2.2)
+    - YTKNetwork (= 3.0.0)
+    - YYModel (= 1.0.4)
+    - YYText (= 1.0.7)
+  - ErosPluginBaseLibrary/BMWeexExtension (1.4.2):
+    - CTMediator (= 13)
+    - Masonry (= 1.1.0)
+    - MJRefresh (= 3.2.0)
+    - SDWebImage (= 5.0.6)
+    - SocketRocket (= 0.5.1)
+    - SSZipArchive (= 2.2.2)
+    - YTKNetwork (= 3.0.0)
+    - YYModel (= 1.0.4)
+    - YYText (= 1.0.7)
+  - ErosPluginBaseLibrary/ErosApp (1.4.2):
+    - CTMediator (= 13)
+    - Masonry (= 1.1.0)
+    - MJRefresh (= 3.2.0)
+    - SDWebImage (= 5.0.6)
+    - SocketRocket (= 0.5.1)
+    - SSZipArchive (= 2.2.2)
+    - YTKNetwork (= 3.0.0)
+    - YYModel (= 1.0.4)
+    - YYText (= 1.0.7)
+  - eroswyqy (0.1.2):
+    - QY_iOS_SDK (~> 5.11.0)
+  - FSCalendar (2.8.0)
+  - Masonry (1.1.0)
+  - MJRefresh (3.2.0)
+  - NIMSDK_LITE (7.6.2)
+  - QY_iOS_SDK (5.11.0):
+    - NIMSDK_LITE (~> 7.6.0)
+  - Realm (3.17.0):
+    - Realm/Headers (= 3.17.0)
+  - Realm/Headers (3.17.0)
+  - SDWebImage (5.0.6):
+    - SDWebImage/Core (= 5.0.6)
+  - SDWebImage/Core (5.0.6)
+  - SocketRocket (0.5.1)
+  - SSZipArchive (2.2.2)
+  - TZImagePickerController (3.2.1)
+  - WeexPluginLoader (0.0.1.9.1):
+    - WeexSDK
+  - WeexSDK (1.0.1)
+  - WXDevtool (0.20.1):
+    - SocketRocket
+    - WeexSDK
+  - YTKNetwork (3.0.0):
+    - AFNetworking/NSURLSession (~> 4.0)
+  - YYModel (1.0.4)
+  - YYText (1.0.7)
 
 DEPENDENCIES:
+  - ErosPluginBaseLibrary (from `https://github.com/LiHuiZai/eros-plugin-ios-baseLibrary.git`, branch `master`)
   - eroswyqy (from `../`)
+  - QY_iOS_SDK (~> 5.11.0)
+  - WeexSDK (from `https://github.com/LiHuiZai/WeexiOSSDK.git`, tag `1.0.1`)
+  - WXDevtool (from `https://github.com/bmfe/weex-devtool-iOS.git`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - BindingX
+    - CTMediator
+    - FSCalendar
+    - Masonry
+    - MJRefresh
+    - NIMSDK_LITE
+    - QY_iOS_SDK
+    - Realm
+    - SDWebImage
+    - SocketRocket
+    - SSZipArchive
+    - TZImagePickerController
+    - WeexPluginLoader
+    - YTKNetwork
+    - YYModel
+    - YYText
 
 EXTERNAL SOURCES:
+  ErosPluginBaseLibrary:
+    :branch: master
+    :git: https://github.com/LiHuiZai/eros-plugin-ios-baseLibrary.git
   eroswyqy:
     :path: "../"
+  WeexSDK:
+    :git: https://github.com/LiHuiZai/WeexiOSSDK.git
+    :tag: 1.0.1
+  WXDevtool:
+    :git: https://github.com/bmfe/weex-devtool-iOS.git
+
+CHECKOUT OPTIONS:
+  ErosPluginBaseLibrary:
+    :commit: c88f1a08e6bfa22c0af85e946aba326701380c31
+    :git: https://github.com/LiHuiZai/eros-plugin-ios-baseLibrary.git
+  WeexSDK:
+    :git: https://github.com/LiHuiZai/WeexiOSSDK.git
+    :tag: 1.0.1
+  WXDevtool:
+    :commit: 7c18ebf64372826f04b5afbe6d8559fe2cbaf28a
+    :git: https://github.com/bmfe/weex-devtool-iOS.git
 
 SPEC CHECKSUMS:
-  eroswyqy: 3187417497a9922f0409152caf83a6c3a8d6784f
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  BindingX: b3c6c1c5dcd8e50277cfc5daad09d7010c227524
+  CTMediator: 4cbf8ede42efc6b31715be88b78bdc9d94efa840
+  ErosPluginBaseLibrary: bfe011c23fb787a53db97854c90a731ebbb248b8
+  eroswyqy: 4a60649257f9eb03536919c48d3c42d98439bda8
+  FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
+  NIMSDK_LITE: a66a5642b1cbf3b046c4198816e618b335e566a7
+  QY_iOS_SDK: ef8883df07bb34c1ca98edf9b170868c8e6c4dbb
+  Realm: b30db41ff34fc858ffc25ba8d44a82c164e7ccd0
+  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+  SSZipArchive: fa16b8cc4cdeceb698e5e5d9f67e9558532fbf23
+  TZImagePickerController: bf4c57b98d8707fce41ea6be872414a71c7a8c9d
+  WeexPluginLoader: 85c1304f8ba29864e58531614a0acfeceef1b85c
+  WeexSDK: 6fab93f0a20676222fd197e17b64f3e9d94fc720
+  WXDevtool: ae5197d92941fd5eeeccf607dc31ceb2c556605d
+  YTKNetwork: 0587ce85fda2e2c591405089cc9aaa61649aa5ed
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 3d763b9e49ef1bd7df60fad37cae2dcb0ade221d
+PODFILE CHECKSUM: f2bb9487ccbbdc309b905e580cf801192734d757
 
 COCOAPODS: 1.5.3

@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E75A4176FCC1B0FA84439C1 /* Pods_eroswyqy_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 154A910D5B4FE833A5793114 /* Pods_eroswyqy_Tests.framework */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
+		E65A3B3B340AE5618DD3DFDC /* libPods-eroswyqy_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 484D0117937B45EF4D1C6A23 /* libPods-eroswyqy_Tests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		154A910D5B4FE833A5793114 /* Pods_eroswyqy_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eroswyqy_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		484D0117937B45EF4D1C6A23 /* libPods-eroswyqy_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-eroswyqy_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51C18EB7A706A0BBB691C75B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -41,7 +41,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				0E75A4176FCC1B0FA84439C1 /* Pods_eroswyqy_Tests.framework in Frameworks */,
+				E65A3B3B340AE5618DD3DFDC /* libPods-eroswyqy_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +83,7 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				154A910D5B4FE833A5793114 /* Pods_eroswyqy_Tests.framework */,
+				484D0117937B45EF4D1C6A23 /* libPods-eroswyqy_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,6 +129,7 @@
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
 				CC06265475203F22CD2B291E /* [CP] Embed Pods Frameworks */,
+				03FA041BA2C3767CE66D873D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -184,6 +185,62 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		03FA041BA2C3767CE66D873D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-eroswyqy_Tests/Pods-eroswyqy_Tests-resources.sh",
+				"${PODS_ROOT}/ErosPluginBaseLibrary/Source/BMComponent/Calendar/Resources/CalendarLeftArrows@2x.png",
+				"${PODS_ROOT}/ErosPluginBaseLibrary/Source/BMComponent/Calendar/Resources/CalendarLeftArrows@3x.png",
+				"${PODS_ROOT}/ErosPluginBaseLibrary/Source/BMComponent/Calendar/Resources/CalendarReightArrows@2x.png",
+				"${PODS_ROOT}/ErosPluginBaseLibrary/Source/BMComponent/Calendar/Resources/CalendarReightArrows@3x.png",
+				"${PODS_ROOT}/ErosPluginBaseLibrary/Source/BMComponent/Chart/Resources/bm-chart.html",
+				"${PODS_ROOT}/ErosPluginBaseLibrary/Source/BMComponent/Chart/Resources/echarts.min.js",
+				"${PODS_ROOT}/ErosPluginBaseLibrary/Source/BMModule/Modal/SVProgressHUD/SVProgressHUD.bundle",
+				"${PODS_ROOT}/ErosPluginBaseLibrary/Source/BMWeexExtension/Resources/arrowInKeyboard@2x.png",
+				"${PODS_ROOT}/ErosPluginBaseLibrary/Source/BMWeexExtension/Resources/bm-base.js",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/QY_iOS_SDK/SDK/Resources/QYResource.bundle",
+				"${PODS_ROOT}/QY_iOS_SDK/SDK/Resources/QYCustomResource.bundle",
+				"${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle",
+				"${PODS_ROOT}/WeexSDK/WeexSDK/Resources/native-bundle-main.js",
+				"${PODS_ROOT}/WeexSDK/WeexSDK/Resources/weex-main-jsfm.js",
+				"${PODS_ROOT}/WeexSDK/WeexSDK/Resources/weex-polyfill.js",
+				"${PODS_ROOT}/WeexSDK/WeexSDK/Resources/weex-rax-api.js",
+				"${PODS_ROOT}/WeexSDK/WeexSDK/Resources/wx_load_error@3x.png",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CalendarLeftArrows@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CalendarLeftArrows@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CalendarReightArrows@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CalendarReightArrows@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/bm-chart.html",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/echarts.min.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/arrowInKeyboard@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/bm-base.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QYResource.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QYCustomResource.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TZImagePickerController.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/native-bundle-main.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/weex-main-jsfm.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/weex-polyfill.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/weex-rax-api.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wx_load_error@3x.png",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-eroswyqy_Tests/Pods-eroswyqy_Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6E9CDF64BD17D64913924396 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -215,13 +272,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-eroswyqy_Tests/Pods-eroswyqy_Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/eroswyqy/eroswyqy.framework",
+				"${PODS_ROOT}/NIMSDK_LITE/NIMSDK/NIMSDK.framework",
+				"${PODS_ROOT}/QY_iOS_SDK/SDK/QYSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/eroswyqy.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIMSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QYSDK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
