@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'eroswyqy'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = 'A short description of eroswyqy.'
   s.description      = <<-DESC
 TODO: Add long description of the pod here.
@@ -19,5 +19,5 @@ TODO: Add long description of the pod here.
 
   s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'QY_iOS_SDK', '~> 5.11.0'
+  s.dependency 'QY_iOS_SDK', '~> 5.15.0'
 end
