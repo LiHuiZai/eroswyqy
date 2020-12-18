@@ -178,7 +178,7 @@ PODS:
     - YTKNetwork (= 3.0.0)
     - YYModel (= 1.0.4)
     - YYText (= 1.0.7)
-  - eroswyqy (0.1.2):
+  - eroswyqy (0.1.3):
     - QY_iOS_SDK (~> 5.11.0)
   - FSCalendar (2.8.0)
   - Masonry (1.1.0)
@@ -261,7 +261,7 @@ SPEC CHECKSUMS:
   BindingX: b3c6c1c5dcd8e50277cfc5daad09d7010c227524
   CTMediator: 4cbf8ede42efc6b31715be88b78bdc9d94efa840
   ErosPluginBaseLibrary: bfe011c23fb787a53db97854c90a731ebbb248b8
-  eroswyqy: 4a60649257f9eb03536919c48d3c42d98439bda8
+  eroswyqy: abeb51213631425f0e19e36533b642dc0753d53a
   FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437

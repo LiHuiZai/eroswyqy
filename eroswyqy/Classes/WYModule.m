@@ -11,6 +11,10 @@
 #import <WeexPluginLoader/WeexPluginLoader/WeexPluginLoader.h>
 #import "TXTools.h"
 #import "NSDictionary+Util.h"
+#import "BMGlobalEventManager.h"
+#import "BMConfigManager.h"
+#import "BMMediatorManager.h"
+#import "WYPushMessage.h"
 
 WX_PlUGIN_EXPORT_MODULE(ErosQiyu, WYModule)
 
@@ -26,13 +30,13 @@ WX_EXPORT_METHOD_SYNC(@selector(logout));//退出登陆
 WX_EXPORT_METHOD_SYNC(@selector(track:data:));//行为记录
 WX_EXPORT_METHOD_SYNC(@selector(getUnreadCount:));//未读消息数量
 
-//消息点击 拦截点击事件
 //消息通知 离开聊天界面的消息通知
 
 
 - (void)open:(NSDictionary *)info
 {
-    
+    [[WYPushMessage shareInstance] configPushService];
+
     QYSource *source = [[QYSource alloc] init];
     source.title = [info objectForKey:@"sourceTitle"];
     source.urlString = [info objectForKey:@"sourceUri"];
@@ -40,18 +44,40 @@ WX_EXPORT_METHOD_SYNC(@selector(getUnreadCount:));//未读消息数量
     QYSessionViewController *sessionViewController = [[QYSDK sharedSDK] sessionViewController];
     sessionViewController.sessionTitle = source.title;
     sessionViewController.source = source;
+    
+    //测试
+    sessionViewController.staffId = 5976966;
+    
     NSString *strProduct = [info objectForKey:@"product"];
-    if ([self isBlankString:strProduct]) {
+    BOOL isProduct = [self isBlankString:strProduct];
+    if (!isProduct) {
         NSDictionary *dic =[[self class] dictionaryWithJsonString:strProduct];
         sessionViewController.commodityInfo = [self makeCommodityInfo:dic];
     }else{
         sessionViewController.commodityInfo = NULL;
     }
-    
     sessionViewController.hidesBottomBarWhenPushed = YES;
+    
+    /**
+     * 所有消息中的链接回调
+     */
+    [[QYSDK sharedSDK] customActionConfig].linkClickBlock = ^(NSString *actionUrl) {
+//        NSString *tip = [NSString stringWithFormat:@"actionUrl: %@", actionUrl];
+//        NSDictionary *dicUrl = @{@"chatJumpUrl": actionUrl};
+//        NSString *strUrl = [self convertToJsonData:dicUrl];
+//        NSDictionary *resDic = [NSDictionary configCallbackDataWithResCode:0 msg:nil data:dicUrl];
+        NSDictionary *userinfo=[NSDictionary dictionaryWithObject:actionUrl forKey:@"pageJumpUrl"];
+          [BMGlobalEventManager pushMessage:userinfo appLaunchedByNotification:YES];
+
+        [[TXTools sharedTXTools].currentViewController dismissViewControllerAnimated:YES completion:nil];
+    };
+    
+    
+    
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:sessionViewController];
     sessionViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(onBack:)];
-    [[TXTools sharedTXTools].currentNavigationViewController pushViewController:nav animated:YES];
+//    [[TXTools sharedTXTools].currentNavigationViewController pushViewController:nav animated:YES];
+    [[TXTools sharedTXTools].currentViewController presentViewController:nav animated:YES completion:nil];
     
 }
 //登陆
@@ -96,12 +122,13 @@ WX_EXPORT_METHOD_SYNC(@selector(getUnreadCount:));//未读消息数量
     if (callback) {
         NSMutableDictionary * dict = nil;
         
-        NSDictionary *resDic = [NSDictionary configCallbackDataWithResCode:0 msg:str data:dict];
+        NSDictionary *resDic = [NSDictionary configCallbackDataWithResCode:0 msg:nil data:str];
+        
         callback(resDic);
     }
 }
 -(QYCommodityInfo *)makeCommodityInfo:(NSDictionary *)dic{
-    QYCommodityInfo *commodityInfo = nil;
+    QYCommodityInfo *commodityInfo = [[QYCommodityInfo alloc]init];
     commodityInfo.title = [dic objectForKey:@"title"];
     commodityInfo.desc = [dic objectForKey:@"desc"];
     commodityInfo.urlString = [dic objectForKey:@"url"];
@@ -144,6 +171,9 @@ WX_EXPORT_METHOD_SYNC(@selector(getUnreadCount:));//未读消息数量
     if (!aStr.length) {
         return YES;
     }
+    if ([aStr isEqualToString:@"null"]) {
+        return  YES;
+    }
     NSCharacterSet *set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
     NSString *trimmedStr = [aStr stringByTrimmingCharactersInSet:set];
     if (!trimmedStr.length) {
@@ -151,4 +181,45 @@ WX_EXPORT_METHOD_SYNC(@selector(getUnreadCount:));//未读消息数量
     }
     return NO;
 }
+
+// 字典转json字符串方法
+
+-(NSString *)convertToJsonData:(NSDictionary *)dict
+
+{
+
+    NSError *error;
+
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&error];
+
+    NSString *jsonString;
+
+    if (!jsonData) {
+
+        NSLog(@"%@",error);
+
+    }else{
+
+        jsonString = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
+
+    }
+
+    NSMutableString *mutStr = [NSMutableString stringWithString:jsonString];
+
+    NSRange range = {0,jsonString.length};
+
+    //去掉字符串中的空格
+
+    [mutStr replaceOccurrencesOfString:@" " withString:@"" options:NSLiteralSearch range:range];
+
+    NSRange range2 = {0,mutStr.length};
+
+    //去掉字符串中的换行符
+
+    [mutStr replaceOccurrencesOfString:@"\n" withString:@"" options:NSLiteralSearch range:range2];
+
+    return mutStr;
+
+}
+
 @end
