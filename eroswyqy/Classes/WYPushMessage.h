@@ -16,11 +16,22 @@ NS_ASSUME_NONNULL_BEGIN
 /** 配置推送服务 */
 - (void)configPushService;
 
+/** 注册token */
++ (void)registerForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken;
+
 /** 后台更新 */
 + (void)performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
 
 /** ios10之前 收到push消息回调方法 */
 + (void)receiveRemoteNotificationWY:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
+
+/**
+ *  注册推送消息通知回调
+ *
+ *  @param block 收到消息的回调
+ */
+
+- (void)WYregisterPushMessageNotification;
 
 /**
  用户点击推送消息打开app，会调用此方法注册一个监听首屏渲染完成的通知，然后再将推送内容 fire 给js

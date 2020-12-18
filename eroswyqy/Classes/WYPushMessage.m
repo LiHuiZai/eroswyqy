@@ -9,13 +9,14 @@
 #import "BMGlobalEventManager.h"
 #import "BMConfigManager.h"
 #import "BMMediatorManager.h"
+#import <QYSDK/QYSDK.h>
 
 // iOS10 及以上需导入 UserNotifications.framework
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
 #import <UserNotifications/UserNotifications.h>
 #endif
 
-@interface WYPushMessage () <UNUserNotificationCenterDelegate>
+@interface WYPushMessage () <UNUserNotificationCenterDelegate,QYConversationManagerDelegate, QYSessionViewDelegate>
 {
     NSString *_cid;
     NSString *_deviceToken;
@@ -168,8 +169,32 @@
 
     [self registerRemoteNotification];
 }
+- (void)WYregisterPushMessageNotification{
+    
+    [[QYSDK sharedSDK] registerPushMessageNotification:^(QYPushMessage *message) {
+        NSString *time = [[self class] showTime:message.time showDetail:YES];
+        NSString *content = @"";
+        content = [NSString stringWithFormat:@"头像url：%@ \n按钮文本：%@ \n按钮链接：%@ \n时间：%@", message.headImageUrl, message.actionText, message.actionUrl, time] ;
+        if (message.type == QYPushMessageTypeText) {
+            content = [content stringByAppendingString:[NSString stringWithFormat:@" \n内容：%@", message.text]];
+        } else if (message.type == QYPushMessageTypeRichText) {
+            content = [content stringByAppendingString:[NSString stringWithFormat:@" \n内容：%@", message.richText]];
+        } else if (message.type == QYPushMessageTypeImage) {
+            content = [content stringByAppendingString:[NSString stringWithFormat:@" \n内容：%@", message.imageUrl]];
+        }
 
-+ (void)registerForRemoteNotificationsWithDeviceTokenWY:(NSData *)deviceToken
+        UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"推送消息"
+                                                         message:content
+                                                        delegate:self
+                                               cancelButtonTitle:@"确定"
+                                               otherButtonTitles:nil,nil];
+        [dialog show];
+    }];
+    
+}
+
+
++ (void)registerForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     if (@available(iOS 13.0, *)) {
        NSUInteger length = [deviceToken length];
@@ -183,6 +208,7 @@
        NSString *token = [self hexadecimalString:deviceToken];
        [WYPushMessage shareInstance]->_deviceToken = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
     }
+    [[QYSDK sharedSDK] updateApnsToken:deviceToken];
 
 }
 
@@ -221,5 +247,42 @@
     [WYPushMessage shareInstance]->_pushMessage = pushMessage;
     
     [[NSNotificationCenter defaultCenter] addObserver:[WYPushMessage shareInstance] selector:@selector(firstScreenDidFinished:) name:BMFirstScreenDidFinish object:nil];
+}
+
++ (NSString *)showTime:(NSTimeInterval) msglastTime showDetail:(BOOL)showDetail {
+    //今天的时间
+    NSDate * nowDate = [NSDate date];
+    NSDate * msgDate = [NSDate dateWithTimeIntervalSince1970:msglastTime];
+    NSString *result = nil;
+    NSCalendarUnit components = (NSCalendarUnit)(NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitWeekday|NSCalendarUnitHour | NSCalendarUnitMinute);
+    NSDateComponents *nowDateComponents = [[NSCalendar currentCalendar] components:components fromDate:nowDate];
+    NSDateComponents *msgDateComponents = [[NSCalendar currentCalendar] components:components fromDate:msgDate];
+    NSDate *today = [[NSDate alloc] init];
+    NSTimeInterval secondsPerDay = 24 * 60 * 60;
+    NSDate *yesterday = [today dateByAddingTimeInterval: -secondsPerDay];
+    NSDateComponents *yesterdayDateComponents = [[NSCalendar currentCalendar] components:components fromDate:yesterday];
+    
+    NSInteger hour = msgDateComponents.hour;
+    result = @"";
+    
+    if (nowDateComponents.year == msgDateComponents.year
+        && nowDateComponents.month == msgDateComponents.month
+        && nowDateComponents.day == msgDateComponents.day) {
+        //今天,hh:mm
+        result = [[NSString alloc] initWithFormat:@"%@ %ld:%02d",result,(long)hour,(int)msgDateComponents.minute];
+    } else if (yesterdayDateComponents.year == msgDateComponents.year
+               && yesterdayDateComponents.month == msgDateComponents.month
+               && yesterdayDateComponents.day == msgDateComponents.day) {
+        //昨天，昨天 hh:mm
+        result = showDetail?  [[NSString alloc] initWithFormat:@"昨天%@ %ld:%02d",result,(long)hour,(int)msgDateComponents.minute] : @"昨天";
+    } else if(nowDateComponents.year == msgDateComponents.year) {
+        //今年，MM/dd hh:mm
+        result = [NSString stringWithFormat:@"%02d/%02d %ld:%02d", (int)msgDateComponents.month, (int)msgDateComponents.day, (long)msgDateComponents.hour, (int)msgDateComponents.minute];
+    } else if(nowDateComponents.year != msgDateComponents.year) {
+        //跨年， YY/MM/dd hh:mm
+        NSString *day = [NSString stringWithFormat:@"%02d/%02d/%02d", (int)(msgDateComponents.year%100), (int)msgDateComponents.month, (int)msgDateComponents.day];
+        result = showDetail ? [day stringByAppendingFormat:@" %@ %ld:%02d",result, (long)hour, (int)msgDateComponents.minute] : day;
+    }
+    return result;
 }
 @end
