@@ -46,7 +46,7 @@ WX_EXPORT_METHOD_SYNC(@selector(getUnreadCount:));//未读消息数量
     sessionViewController.source = source;
     
     //测试
-    sessionViewController.staffId = 5976966;
+//    sessionViewController.staffId = 5976966;
     
     NSString *strProduct = [info objectForKey:@"product"];
     BOOL isProduct = [self isBlankString:strProduct];
