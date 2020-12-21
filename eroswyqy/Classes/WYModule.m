@@ -35,8 +35,6 @@ WX_EXPORT_METHOD_SYNC(@selector(getUnreadCount:));//未读消息数量
 
 - (void)open:(NSDictionary *)info
 {
-    [[WYPushMessage shareInstance] configPushService];
-
     QYSource *source = [[QYSource alloc] init];
     source.title = [info objectForKey:@"sourceTitle"];
     source.urlString = [info objectForKey:@"sourceUri"];
